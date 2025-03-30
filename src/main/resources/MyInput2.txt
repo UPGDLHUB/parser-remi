@@ -1,0 +1,113 @@
+int globalVariable = 10;
+string globalString = "Hello world";
+
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+    
+    boolean isEven(int number) {
+        boolean result;
+        if (number) {
+            result = true;
+        } else {
+            result = false;
+        }
+        return result;
+    }
+    
+    int factorial(int n) {
+        int result = 1;
+        int i = 1;
+        while (i > 3) {
+            result = result * i;
+            i = i + 1;
+        }
+        return result;
+    }
+    
+    void printNumbers(int max) {
+        for (int i = 0; i < max; i = i + 1) {
+            if (i == 2) {
+                printValue(i);
+            } else if (i == 5) {
+                printValue(5);
+            } else {
+                printValue(i + 100);
+            }
+        }
+        return;
+    }
+    
+    int sumNegative(int n) {
+        int sum = 0;
+        int count = 0;
+        do {
+            sum = sum + (-n);
+            count = count + 1;
+        } while (count);
+        return sum;
+    }
+    
+    void testLiterals() {
+        int decimal = 123;
+        int binary = 0b101;
+        int octal = 0123;
+        int hexadecimal = 0xFF;
+        float floatNumber = 12.34;
+        char character = 'A';
+        string text = "test";
+        
+        int choice = 1;
+        switch (choice) {
+            case 1:
+                printValue(decimal);
+                break;
+            case 2:
+                printValue(binary);
+                break;
+            case 3:
+                printValue(octal);
+                break;
+            case 4:
+                printValue(hexadecimal);
+                break;
+            default:
+                printValue(0);
+                break;
+        }
+    }
+    
+    boolean complexExpression(int a, int b, int c) {
+        return (a > b && b > c) || (a < b && b < c) || !(a == b || b == c);
+    }
+    
+    void printValue(int value) {
+        println(value);
+    }
+    
+    void main() {
+        int result = add(5, 10);
+        printValue(result);
+        
+        boolean evenCheck = isEven(4);
+        
+        int fact = factorial(5);
+        printValue(fact);
+        
+        printNumbers(10);
+        
+        int negSum = sumNegative(5);
+        printValue(negSum);
+        
+        testLiterals();
+        
+        boolean complex = complexExpression(5, 3, 1);
+        
+        if (complex) {
+            printValue(1);
+        } else {
+            printValue(0);
+        }
+    }
+}
